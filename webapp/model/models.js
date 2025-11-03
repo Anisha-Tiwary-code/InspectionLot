@@ -55,6 +55,7 @@ sap.ui.define([
 				"selectedRREC": false,
 				"selectedLTIN": false,
 				"Plant": "",
+					"WorkCenter": "",
 				"material": "",
 				"batch": "",
 				"selectedSevan": true,
