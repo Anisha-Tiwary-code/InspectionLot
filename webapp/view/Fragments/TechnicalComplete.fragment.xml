@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog afterClose="onAfterDialogClose" title="{i18n>lblDitalSign}" contentWidth="20em">
+   	<content>
+   		<f:SimpleForm class="sapUiSizeCompact" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+		<f:content>
+			<Label text="{i18n>lblInspectionLot}" required="true"/>
+			<Input value="{InspectionLotHDRModel>/InspectionLot}" enabled="false"/>
+			<Label text="{i18n>lblRemark}" required="true"/>
+			<Input value="{i18n>lblRemarkData} {InspectionLotHDRModel>/InspectionLot}" enabled="false" class="styleOverFlow"/>
+			<Label text="{i18n>lblSignatory}" required="true"/>
+			<Input value="{AppModeModel>/Username}" enabled="false"/>
+			<Label text="{i18n>lblPassword}" required="true"/>
+			<Input type="Password"/>
+		</f:content>
+	</f:SimpleForm>
+	</content>
+	<buttons>
+		<Button text="{i18n>btnOK}" class="footerBtnWidth" type="Emphasized" press="onDialogCloseResult"/>
+		<Button text="{i18n>btnClose}" visible="true" press="onDialogClose"/>
+	</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+    <Dialog title="{i18n>titleAddAttachment}">
+        <content>
+            <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+			    <f:content>
+                    <Label text="{i18n>lblType}"></Label>
+                    <ComboBox selectedKey="{AttachmentModel>/addTypeKey}" items="{AttachmentModel>/typeSelItems}" change="onTypeSelectChange">
+                        <core:ListItem key="{AttachmentModel>key}" text="{AttachmentModel>text} - {AttachmentModel>additionalText}"/>
+			        </ComboBox>
+                    <Label text="{i18n>lblDescription}" required="true" visible="{=${AttachmentModel>/addTypeKey} === 'ZWB' ? true:false}"/>
+                    <Input id="idZwbDescription" value="{AttachmentModel>/zwbDescription}" visible="{=${AttachmentModel>/addTypeKey} === 'ZWB' ? true:false}"/>
+                    <Label text="{i18n>lblOriginalURL}" required="true" visible="{=${AttachmentModel>/addTypeKey} === 'ZWB' ? true:false}"/>
+                    <Input id="idZwbOriginalUrl" value="{AttachmentModel>/zwbUrl}" visible="{=${AttachmentModel>/addTypeKey} === 'ZWB' ? true:false}"/>
+                    <Label text="{i18n>lblSelectFiles}" visible="{=${AttachmentModel>/addTypeKey} === 'ZQI' ? true:false}"/>
+                    <u:FileUploader id="fileUploader" multiple="true"
+			            change="handleValueChange" uploadOnChange="false"
+			            typeMissmatch="handleTypeMissmatch" style="Emphasized" useMultipart="false"
+                        visible="{=${AttachmentModel>/addTypeKey} === 'ZQI' ? true:false}"
+                        fileType="{AttachmentModel>/supportedFileTypes}">
+                    </u:FileUploader>
+                </f:content>
+		    </f:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="{i18n>btnAdd}" press="onPressAttachmentAdd"/>
+            <Button text="{i18n>btnClose}" press="onCloseAddAttachment"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

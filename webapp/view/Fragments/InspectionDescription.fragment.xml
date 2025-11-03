@@ -1,0 +1,70 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:l="sap.ui.layout.form"
+>
+    <Dialog
+        title="{i18n>ttInspectionDescription}"
+        draggable="true"
+        resizable="true"
+        contentWidth="800px"
+        contentHeight="auto"
+        class="sapUiResponsivePadding"
+    >
+        <VBox>
+            <HBox alignItems="Center">
+                <Text
+                    text="{i18n>txtChar}"
+                    width="50px"
+                    class="sapUiSmallMarginBegin"
+                />
+                <Input
+                    value="{serialModel>/serialNumber}"
+                    width="50px"
+                    editable="false"
+                />
+                <Text
+                    text="{serialModel>/charDesc}"
+                    class="sapUiSmallMarginBegin"
+                />
+            </HBox>
+
+            <Label
+                text="{i18n>ttInspectionDescription}"
+                class="sapUiSmallMarginTop sapUiSmallMarginBegin"
+            />
+
+            <VBox class="sapUiSmallMarginTop sapUiTinyMarginBottom">
+             <HBox class="sapUiSmallMarginTop">
+                <Label text="{i18n>txtShortText}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd" />
+                <Input
+                    value="{serialModel>/shortText}"
+                    width="500px"
+                />
+                </HBox>
+                <CheckBox
+                    text="{i18n>txtLongTex}"
+                    selected="{serialModel>/longText}"
+                    class="sapUiSmallMarginBegin"
+                />
+            </VBox>
+        </VBox>
+
+        <beginButton>
+            <Button
+                text="{i18n>btnOK}"
+                type="Accept"
+                press=".onConfirmInspectionDescription"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="{i18n>btnCancel}"
+                type="Reject"
+                press=".onCancelInspectionDescription"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

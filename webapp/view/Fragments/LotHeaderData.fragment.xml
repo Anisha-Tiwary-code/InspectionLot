@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+		<f:content>
+			<Label text="{i18n>lblInspectionType}"/>
+			<Input value="{InspectionLotHDRModel>/InspectionType}" enabled="false"/>
+			<Label text="{i18n>lblInspectionLot}"/>
+			<Input value="{InspectionLotHDRModel>/InspectionLot}" enabled="false"/>
+			<Label text="{i18n>lblMaterial}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Input value="{InspectionLotHDRModel>/Matnr}" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Label text="{i18n>lblBatch}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Input value="{InspectionLotHDRModel>/Charg}" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Label text="{i18n>lblMaterialDescription}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Input value="{InspectionLotHDRModel>/Maktx}" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<!--Begin Code CR 5000026736 Veera Sudheer-->
+			<Label text="{i18n>lblWorkCenter}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<Input value="{filterModel>/WorkCenter}" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			<!--End Code CR 5000026736 Veera Sudheer-->
+			<Label text="{i18n>lblOrder}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? false : true}"/>
+			<Input value="{InspectionLotHDRModel>/WorkOrderNo} - {InspectionLotHDRModel>/Description}" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 1 ? false : true}"/>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

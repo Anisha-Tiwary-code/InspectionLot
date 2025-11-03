@@ -1,0 +1,147 @@
+<mvc:View controllerName="com.reckitt.zqminsplotrr.controller.InspectionLotRR" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Panel headerText="{i18n>headerFilter}" expandable="true" expanded="true" class="sapUiSizeCompact">
+							<content>
+								<f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+									<f:content>
+										<Label text="{i18n>lblSelect}" design="Bold"></Label>
+											<RadioButtonGroup columns="5" id="idRadio" selectedIndex="{filterModel>/inspectionlottypes}" select="onRadioSelectChange">
+												<RadioButton text="PM"/>
+												<RadioButton text="QM"/>
+											</RadioButtonGroup>
+										<Label text="{i18n>lblStatus}"/>
+										<CheckBox text="{i18n>lblREL}" selected="{filterModel>/selectedREL}" enabled="{= ${filterModel>/inspectionlottypes} === 2 ? false : true}"/>
+										<CheckBox text="{i18n>lblRREC}" selected="{filterModel>/selectedRREC}" enabled="{= ${filterModel>/inspectionlottypes} === 2 ? false : true}"/>
+										<CheckBox text="{i18n>lblLTIN}" id="checkBox2" selected="{filterModel>/selectedLTIN}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Label text="{i18n>lblInspectionType}"  visible="{= ${filterModel>/inspectionlottypes} === 2 ? true : false}"></Label>
+										<Input value="" showValueHelp="true" id="idtest" enabled="false" visible="{= ${filterModel>/inspectionlottypes} === 2 ? true : false}"/>
+										<Label text="{i18n>lblInspectionType}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Input value="{filterModel>/InspectionType}" change="onChangeInspType" showValueHelp="true" valueHelpRequest="onVHInspectionType" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Label text="{i18n>lblInspectionType}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"></Label>
+										<Input value="{filterModel>/inspTypeQM}" showValueHelp="true" valueHelpRequest="onVHInspTypeQM" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<!--Begin Code CR 5000026736 Veera Sudheer-->
+										<Label text="{i18n>lblProductionOrder}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Input value="{filterModel>/ProductionOrder}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Button icon="sap-icon://bar-code" text="{i18n>btnScan}" press="onBCSProdOrder" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}">
+											<layoutData>
+												<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+											</layoutData>
+										</Button>
+										<!--End Code CR 5000026736 Veera Sudheer-->
+										<Label text="{i18n>lblInspectionLot}"/>
+										<Input value="{filterModel>/InspectionLot}" enabled="{= ${filterModel>/inspectionlottypes} === 2 ? false : true}"/>
+										<Label text="{i18n>lblMaterial}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"></Label>
+										<!--Begin Code CR 5000026736 Veera Sudheer-->
+										<!-- <Input id="materialID" value="{filterModel>/material}" showValueHelp="true" valueHelpRequest="onVHMaterial" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/> -->
+										<Input 
+											id="materialID" 
+											value="{filterModel>/material}" 
+											showValueHelp="true" 
+											valueHelpRequest="onVHMaterial" 
+											visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"
+											startSuggestion="2"
+											showSuggestion="true"
+											suggestionItems="{ path: 'CommonValueHelpModel>/MaterialSetQM' }">
+												<core:ListItem
+													text="{CommonValueHelpModel>Material}"
+													key="{CommonValueHelpModel>Material}"
+													additionalText="{CommonValueHelpModel>Description}"
+												/>
+										</Input>
+										<!--End Code CR 5000026736 Veera Sudheer-->
+										<Label text="{i18n>lblLotsforEquipment} / {i18n>lblLotsForFuncLocation}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<CheckBox selected="{filterModel>/LotsforEquipment}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<CheckBox selected="{filterModel>/LotsForFuncLocation}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Label text="{i18n>lblEquipment}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"></Label>
+										<Input value="{filterModel>/Equipment}" change="onChangeEquipment" showValueHelp="true" valueHelpRequest="onVHEquipment" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Button icon="sap-icon://bar-code" text="{i18n>btnScan}" press="onBCSEquipment" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}">
+											<layoutData>
+												<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+											</layoutData>
+										</Button>
+										
+										<Label text="{i18n>lblFunctionalLocation}" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Input value="{filterModel>/FunctionalLocation}" change="onChangeFuncLoc" showValueHelp="true" valueHelpRequest="onVHFunctionalLoc" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}"/>
+										<Button icon="sap-icon://bar-code" text="{i18n>btnScan}" press="onBCSFuncLoc" visible="{= ${filterModel>/inspectionlottypes} === 0 ? true : false}">
+											<layoutData>
+												<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+											</layoutData>
+										</Button>
+										<Label text="{i18n>lblBatch}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"></Label>
+										<!--Begin Code CR 5000026736 Veera Sudheer-->
+										<!-- <Input value="{filterModel>/batch}" showValueHelp="true" valueHelpRequest="onVHBatch" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/> -->
+										<Input 
+											id="idBatch"
+											value="{filterModel>/batch}" 
+											showValueHelp="true" 
+											valueHelpRequest="onVHBatch" 
+											visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"
+											startSuggestion="2"
+											showSuggestion="true"											
+											suggestionItems="{ path: 'CommonValueHelpModel>/BatchSetQM' }">
+	 											<core:ListItem
+													text="{CommonValueHelpModel>Batch}"
+													key="{CommonValueHelpModel>Batch}"
+													additionalText="{CommonValueHelpModel>Description}"
+												/>
+                            			</Input>
+										<!--End Code CR 5000026736 Veera Sudheer-->
+										<!-- <Label text="{i18n>lblInspectionStartDate}"/>
+										<RadioButtonGroup columns="5" enabled="{= ${filterModel>/inspectionlottypes} === 2 ? false : true}">
+											<RadioButton text="{i18n>lblOne}" selected="{filterModel>/selectedOne}"/>
+											<RadioButton text="{i18n>lblSevan}" selected="{filterModel>/selectedSevan}"/>
+											<RadioButton text="{i18n>lblTwentyEight}" selected="{filterModel>/selectedTwentyEight}"/>
+											<RadioButton text="{i18n>lblNinety}" selected="{filterModel>/selectedNinety}"/>
+											<RadioButton text="{i18n>lblThreeSixty}" selected="{filterModel>/selectedThreeSixty}"/>
+										</RadioButtonGroup> -->
+										<Label text="{i18n>lblSample}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Input value="{filterModel>/Sample}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Button icon="sap-icon://bar-code" text="{i18n>btnScan}" press="onBCSSample" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}">
+											<layoutData>
+												<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+											</layoutData>
+										</Button>										
+										<Label text="{i18n>lblMaterialType}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"></Label>
+										<Input value="{filterModel>/MaterialType}" showValueHelp="true" valueHelpRequest="onMaterialType" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}" />
+										<!-- <Label text="{i18n>lblSample}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Input value="{filterModel>/Sample}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+										<Button icon="sap-icon://bar-code" text="{i18n>btnScan}" press="onBCSSample" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}">
+											<layoutData>
+												<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+											</layoutData>
+										</Button> -->
+										<Label text="{i18n>lblInspectionStartDate}"/>
+										<RadioButtonGroup columns="5" enabled="{= ${filterModel>/inspectionlottypes} === 2 ? false : true}">
+											<RadioButton text="{i18n>lblOne}" selected="{filterModel>/selectedOne}"/>
+											<RadioButton text="{i18n>lblSevan}" selected="{filterModel>/selectedSevan}"/>
+											<RadioButton text="{i18n>lblTwentyEight}" selected="{filterModel>/selectedTwentyEight}"/>
+											<RadioButton text="{i18n>lblNinety}" selected="{filterModel>/selectedNinety}"/>
+											<RadioButton text="{i18n>lblThreeSixty}" selected="{filterModel>/selectedThreeSixty}"/>
+										</RadioButtonGroup>
+										<Label text="{i18n>lblPlant}"/>
+										<Input id="PlantID" value="{filterModel>/Plant}" enabled="{AppModeModel>/enabledPlant}"/>
+										<!--Begin Code CR 5000026736 Veera Sudheer-->
+										<Label text="{i18n>lblWorkCenter}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"></Label>
+										<Input value="{filterModel>/WorkCenter}" showValueHelp="true" valueHelpRequest="onWorkCenterType" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}" />
+										<!--End Code CR 5000026736 Veera Sudheer-->
+									</f:content>
+								</f:SimpleForm>
+								<Bar class="clsSearchBar">
+									<contentRight>
+										<Button press="onSearch" text="{i18n>btnSearch}" type="Emphasized" width="12em"/>
+									</contentRight>
+								</Bar>
+							</content>
+						</Panel>
+						<core:Fragment fragmentName="com.reckitt.zqminsplotrr.view.Fragments.RRTable" type="XML"></core:Fragment>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

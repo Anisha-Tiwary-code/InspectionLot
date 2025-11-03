@@ -1,0 +1,124 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="idResult" items="{path: 'RecordResultModel>/RecordResultSet', templateShareable: true}" noDataText="{i18n>lblnoData}" mode="{= ${filterModel>/inspectionlottypes} === 0 ? 'MultiSelect' : 'None'}">
+		<columns>
+			<Column	width="4em">
+				<Text text="{i18n>lblCharNo}"/>
+			</Column>
+			<Column width="4em">
+				<Text text="{i18n>lblStatus}"/>
+			</Column>
+			<Column  width="9em">
+				<Text text="{i18n>lblCharShortTxt}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="false" width="6em">
+				<Text text="{i18n>lblCharSpecification}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="6em">
+				<Text text="{i18n>lblAttribute}" />
+			</Column>
+			<Column  minScreenWidth="Tablet" demandPopin="true" width="8em">
+				<Text text="{i18n>lblResult}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="7em">
+				<Text text="{i18n>lblDescription}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="3em">
+				<Text text="{i18n>lblCalculate}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="3em">
+				<Text text="{i18n>lblChart}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="3em">
+				<Text text="{i18n>lblLongTextTable}" />
+			</Column>
+			<Column width="4em">
+				<Text text="{i18n>lblDocReq}" />
+			</Column>
+			<Column width="4em">
+				<Text text="{i18n>lblValuation}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{RecordResultModel>CharNo}"/>
+					<Text text="{RecordResultModel>Status}"/>
+					<Text text="{RecordResultModel>ShortText}"/>
+					<Text text="{RecordResultModel>Specifications}" />
+					<Select width="100%" selectedKey="{RecordResultModel>Attribute}" forceSelection="false" items="{CommonValueHelpModel>/AttributeSet}" enabled="{= ${AppModeModel>/enableRRvalues} === true || (${filterModel>/inspectionlottypes} === 0 &amp;&amp; ${RecordResultModel>Status} !== '3' &amp;&amp; ${RecordResultModel>Status} !== '5')  ? true : false}">
+						<items>
+							<core:ListItem text="{CommonValueHelpModel>Attribut} - {CommonValueHelpModel>Kurztext}" key="{CommonValueHelpModel>Attribut}"/>
+						</items>
+					</Select>
+					<VBox>
+						<Input value="{RecordResultModel>Result}" visible="{=${RecordResultModel>CharType} === '02' ? false : true}" liveChange="onLiveChangeNumberwithTwoDecimal" enabled="{= ${AppModeModel>/enableRRvalues} === true || (${filterModel>/inspectionlottypes} === 0 &amp;&amp; ${RecordResultModel>Status} !== '3' &amp;&amp; ${RecordResultModel>Status} !== '5')  ? true : false}"  editable="{=${RecordResultModel>Status} === '4' || ${RecordResultModel>Calculate} === 'X' ? false : true}"/>
+						<Select width="100%" selectedKey="{RecordResultModel>Result}" forceSelection="false" items="{RecordResultModel>ResultData}" visible="{=${RecordResultModel>CharType} === '02' ? true : false}" change="onChangeRResult" enabled="{= ${AppModeModel>/enableRRvalues} === true || (${filterModel>/inspectionlottypes} === 0 &amp;&amp; ${RecordResultModel>Status} !== '3' &amp;&amp; ${RecordResultModel>Status} !== '5')  ? true : false}" editable="{=${RecordResultModel>Status} === '4' ? false : true}">
+							<items>
+								<core:ListItem text="{RecordResultModel>key} - {RecordResultModel>value}" key="{RecordResultModel>key}"/>
+							</items>
+						</Select>
+					</VBox>
+					<Input value="{RecordResultModel>Description}" enabled="{= ${AppModeModel>/enableRRvalues} === true || (${filterModel>/inspectionlottypes} === 0 &amp;&amp; ${RecordResultModel>Status} !== '3' &amp;&amp; ${RecordResultModel>Status} !== '5')  ? true : false}" maxLength="40"/>
+					<HBox class="alignContentCenter" visible="{=${RecordResultModel>Calculate} === 'X' ? true : false}">
+						<core:Icon src="sap-icon://simulate" press="onCalculate">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+					</HBox>
+					<HBox class="alignContentCenter" visible="{=${RecordResultModel>ControlChart} === 'X' ? true : false}">
+						<core:Icon src="sap-icon://line-chart" press="onChart">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+					</HBox>
+					<HBox class="alignContentCenter" visible="{=${RecordResultModel>InspCharLText} === 'X' ? true : false}">
+						<core:Icon src="sap-icon://display" press="onLongText">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+					</HBox>
+					<Text text="{RecordResultModel>DocuRequiredTxt}" tooltip="{RecordResultModel>sDocReqToolTip}"/>
+					
+			
+<!-- Code Commented By Hari Krishna on 05072024 Starts Here 
+
+					<HBox visible="{=${RecordResultModel>Evaluation}.length > 0 ? true : false}" class="alignContentCenter">
+						<core:Icon src="sap-icon://accept" color="#037203" visible="{=${RecordResultModel>Evaluation} === 'A' ? true : false}">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+						<core:Icon src="sap-icon://decline" color="#a50404" visible="{=${RecordResultModel>Evaluation} === 'A' ? false : true}">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+					</HBox>
+			
+Code Commented By Hari Krishna on 05072024 Ends Here -->			
+			
+<!-- Code Written By Hari Krishna on 05072024 Starts Here  -->
+
+					<HBox visible="{=${RecordResultModel>Evaluation}.length > 0 ? true : false}" class="alignContentCenter">
+						<core:Icon src="sap-icon://accept" color="#037203" visible="{= ${RecordResultModel>Evaluation} === 'A' ? (${RecordResultModel>Status} !== '1' ? (${RecordResultModel>Status} !== '2' ? true : false) : false) : false}">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+						<core:Icon src="sap-icon://decline" color="#a50404" visible="{=${RecordResultModel>Evaluation} === 'A' ? false : true}">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+					</HBox>
+			
+<!-- Code Written By Hari Krishna on 05072024 Ends Here -->						
+
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

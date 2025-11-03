@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog afterClose="onAfterDialogClose" title="{i18n>lblNotificationCreate}" contentWidth="20em">
+   	<content>
+   		<f:SimpleForm class="sapUiSizeCompact" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+		<f:content>
+			<Label text="{i18n>lblNotificationType}" required="true"/>
+			<!-- <ComboBox items="{CommonValueHelpModel>/NotificationTypeSet}" selectedKey="{NotificationModel>/NotificationType}">
+				<core:ListItem text="{CommonValueHelpModel>NotificationType} - {CommonValueHelpModel>Description}" key="{CommonValueHelpModel>NotificationType}"/>
+			</ComboBox> -->
+			<Input value="{NotificationModel>/NotificationType}" editable="false"/>
+			<Label text="{i18n>lblPriority}" required="true"/>
+			<Select forceSelection="false" items="{CommonValueHelpModel>/PrioritySet}" selectedKey="{NotificationModel>/Priority}">
+				<items>
+					<core:ListItem text="{CommonValueHelpModel>Priority} - {CommonValueHelpModel>Description}" key="{CommonValueHelpModel>Priority}"/>
+				</items>
+			</Select>
+			<Label text="{i18n>lblDescription}" required="true"/>
+			<Input value="{NotificationModel>/Description}"/>
+			<Label text="{i18n>lblCoordinator}" required="true"/>
+			<Input value="{NotificationModel>/Coordinator}" showValueHelp="true" valueHelpRequest="onVHCoordinator" change="onChangeCoordinator"/>
+		</f:content>
+	</f:SimpleForm>
+	</content>
+	<buttons>
+		<Button text="{i18n>btnCreate}" class="footerBtnWidth" type="Emphasized" press="onNotificationCreate"/>
+		<Button text="{i18n>btnClose}" visible="true" press="onDialogClose"/>
+	</buttons>
+	</Dialog>
+</core:FragmentDefinition>

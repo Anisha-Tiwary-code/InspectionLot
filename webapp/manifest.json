@@ -1,0 +1,224 @@
+{
+  "_version": "1.17.0",
+  "sap.app": {
+    "id": "com.reckitt.zqminsplotrr",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.3",
+      "toolsId": "b27157fc-90fa-4aae-b7e7-985b7b7eda0b"
+    },
+    "dataSources": {
+      "ZOD_QM_SEARCHHELP_SRV": {
+        "uri": "/sap/opu/odata/sap/ZOD_QM_SEARCHHELP_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/ZOD_QM_SEARCHHELP_SRV.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZOD_PM_SEARCHHELPS_SRV": {
+                "uri": "/sap/opu/odata/sap/ZOD_PM_SEARCHHELPS_SRV",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/metadata.xml"
+                }
+      },
+      "ZOD_QM_INSPECTIONLOT_SRV": {
+        "uri": "/sap/opu/odata/sap/ZOD_QM_INSPECTIONLOT_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/ZOD_QM_INSPECTIONLOT_SRV.xml"
+        }
+      },
+      "ZOD_QM_PRINT_SAMPLE_LABEL_SRV": {
+        "uri": "/sap/opu/odata/sap/ZOD_QM_PRINT_SAMPLE_LABEL_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/ZOD_QM_PRINT_SAMPLE_LABEL_SRV.xml"
+        }
+      },
+      "ZOD_PM_DMS_FF_SRV": {
+          "uri": "/sap/opu/odata/sap/ZOD_PM_DMS_FF_SRV/",
+          "type": "OData",
+          "settings": {
+              "localUri": "localService/ZOD_PM_DMS_FF_SRV.xml"
+          }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.71.47",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.reckitt.zqminsplotrr.i18n.i18n"
+        }
+      },
+      "oDataSearchModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "ZOD_QM_SEARCHHELP_SRV",
+        "preload": true
+      },
+      "oDataModel": {
+         "type": "sap.ui.model.odata.v2.ODataModel",
+         "settings": {
+            "defaultOperationMode": "Server",
+            "defaultBindingMode": "OneWay",
+            "defaultCountMode": "Request"
+          },
+          "dataSource": "ZOD_PM_SEARCHHELPS_SRV",
+          "preload": true       
+      },
+      "oDataInspectionLotModel": {
+        "dataSource": "ZOD_QM_INSPECTIONLOT_SRV",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
+      },
+      "printModel": {
+        "dataSource": "ZOD_QM_PRINT_SAMPLE_LABEL_SRV",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
+      },
+      "oDataAttachmentFileTypeModel": {
+          "type": "sap.ui.model.odata.v2.ODataModel",
+          "settings": {
+              "defaultOperationMode": "Server",
+              "defaultBindingMode": "OneWay",
+              "defaultCountMode": "Request"
+          },
+          "dataSource": "ZOD_PM_DMS_FF_SRV",
+          "preload": true
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "libs/quagga.min.js"
+        },
+        {
+          "uri": "libs/aes.js"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.reckitt.zqminsplotrr.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "InspectionLotRR",
+          "pattern": "",
+          "target": [
+            "InspectionLotRR"
+          ]
+        },
+        {
+          "name": "InspectionLotDetail",
+          "pattern": "InspectionLotDetail/{InspectionLotNo}",
+          "target": [
+            "InspectionLotDetail"
+          ]
+        },
+        {
+          "name": "InspectionLotDetailQM",
+          "pattern": "InspectionLotDetailQM/{InspectionLotNo}/{MaterialText}",
+          "target": [
+            "InspectionLotDetailQM"
+          ]
+        }
+      ],
+      "targets": {
+        "InspectionLotRR": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewName": "InspectionLotRR"
+        },
+        "InspectionLotDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewName": "InspectionLotDetail"
+        },
+        "InspectionLotDetailQM": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewName": "InspectionLotDetailQM"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.reckitt.zqminsplotrr.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

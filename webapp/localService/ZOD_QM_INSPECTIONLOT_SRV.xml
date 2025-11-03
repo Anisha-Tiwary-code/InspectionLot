@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOD_QM_INSPECTIONLOT_SRV" xml:lang="en" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="InspLotRRHdr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Insplot"/>
+                </Key>
+                <Property Name="SAVE" Type="ZOD_QM_INSPECTIONLOT_SRV.SAVE" Nullable="false"/>
+                <Property Name="CLOSE" Type="ZOD_QM_INSPECTIONLOT_SRV.CLOSE" Nullable="false"/>
+                <Property Name="UD" Type="ZOD_QM_INSPECTIONLOT_SRV.UD" Nullable="false"/>
+                <Property Name="ApplType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="App type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="char8" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Defectnotif" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsNo" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Number of digital signatures" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fullstatus" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Full status text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orderdesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Valuated" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Auart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Order Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Selectedset" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Selected set" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktextmat" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Obj short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UdDsFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Dig.sign UD" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusChangeFlag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Status change flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TecoDsFlag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TECO DS Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UdFlag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="UD Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sttxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Art" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Inspection Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isd" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Insp. Start Date(7,28,90)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QlXequi" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Only lots for equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QlXfunc" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Only lots for functional locs" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pastrterm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Paendterm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Insp. End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Eqktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="InspLotOprSet" Relationship="ZOD_QM_INSPECTIONLOT_SRV.HdrToOprNav" FromRole="FromRole_HdrToOprNav" ToRole="ToRole_HdrToOprNav"/>
+            </EntityType>
+            <EntityType Name="InspLotOpr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Insplot"/>
+                    <PropertyRef Name="Inspoper"/>
+                </Key>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inspoper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Operation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TxtOper" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Workcenter" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="InspLotpntSet" Relationship="ZOD_QM_INSPECTIONLOT_SRV.OprToInsPointNav" FromRole="FromRole_OprToInsPointNav" ToRole="ToRole_OprToInsPointNav"/>
+                <NavigationProperty Name="InspLotRRHdr" Relationship="ZOD_QM_INSPECTIONLOT_SRV.HdrToOprNav" FromRole="ToRole_HdrToOprNav" ToRole="FromRole_HdrToOprNav"/>
+            </EntityType>
+            <EntityType Name="InspLotpnt" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Insplot"/>
+                    <PropertyRef Name="Inspoper"/>
+                    <PropertyRef Name="Insppoint"/>
+                </Key>
+                <Property Name="TestEquiDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Defectnotif" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhysSmpl" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Physical Sample Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsNo" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Number of digital signatures" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EquiDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Statusold" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Old status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TestEqui" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inspoper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Operation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Statusnew" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="New status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Change" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Change status?" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insppoint" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Inspection pt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipment" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FunctLoc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Batch" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FLocTxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="InspLotRr" Relationship="ZOD_QM_INSPECTIONLOT_SRV.InsPointToResNav" FromRole="FromRole_InsPointToResNav" ToRole="ToRole_InsPointToResNav"/>
+                <NavigationProperty Name="InspLotOpr" Relationship="ZOD_QM_INSPECTIONLOT_SRV.OprToInsPointNav" FromRole="ToRole_OprToInsPointNav" ToRole="FromRole_OprToInsPointNav"/>
+            </EntityType>
+            <EntityType Name="InspLotRr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Insplot"/>
+                    <PropertyRef Name="Inspoper"/>
+                    <PropertyRef Name="Insppoint"/>
+                    <PropertyRef Name="Inspchar"/>
+                </Key>
+                <Property Name="AttrDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpTolLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Upper tol. limit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocuRequ" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Document rslts" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpLmt2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Limit 2 (upper)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpPlsLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="PlausiLimit(Uppr)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ResultText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Evaluation" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Valuation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SelSet1" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Selected set" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CharType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Char. type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LwTolLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="LowerTolerance limit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LwLmt2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Limit 2 (lower)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LwPlsLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Plausi.limit(lowr)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Katalogart" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Catalog" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inspoper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Operation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ErrClass" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Defect class" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insppoint" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Inspection pt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Evaluated" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Copy valuation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inspchar" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Charac. no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MstrChar" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Mast.charac." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpLmt1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Limit 1 (upper)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Spec. status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CharDescr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LwLmt1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Limit 1 (lower)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qtolgrenze" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Specifications" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SingleRes" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Single results" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ResAttr" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Attrib." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ResValue" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="MeasVal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Insp. descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="InspLotpnt" Relationship="ZOD_QM_INSPECTIONLOT_SRV.InsPointToResNav" FromRole="ToRole_InsPointToResNav" ToRole="FromRole_InsPointToResNav"/>
+            </EntityType>
+            <EntityType Name="InspLotATT" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                    <PropertyRef Name="Insplot"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="MIME type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Class" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Content" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Content in binary format" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UserDetails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="User"/>
+                </Key>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="InspStockQty" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Prueflos"/>
+                </Key>
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="68" sap:unicode="false" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Msgty" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PwdEnc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Encrypted password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pwd" Type="Edm.String" Nullable="false" MaxLength="132" sap:unicode="false" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Losmenge" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Insp. Lot Qty" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stat25" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Dig.sign UD Req or not" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lmengezub" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Quantity to be Posted" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GebuchmgF" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Posted qty" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lmenge01" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Unrestricted-use Stock" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lmenge04" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Blocked Stock" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Exidv" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Handling Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oexidv" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Highest-lev.HU" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vemng" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3" sap:unicode="false" sap:label="Packed quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vemeh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="UoM of HU item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Qmgbuchhum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Posting" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Huwminfo" Type="Edm.String" Nullable="false" MaxLength="132" sap:unicode="false" sap:label="Information for Qty Posting" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Venum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Internal HU no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vepos" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="HU item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="InspSample" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Insplot"/>
+                    <PropertyRef Name="Inspoper"/>
+                    <PropertyRef Name="Phynr"/>
+                </Key>
+                <Property Name="Insplot" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inspoper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Operation" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phynr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Physical sample" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="Teco">
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="68" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Signatory" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PwdEnd" Type="Edm.String" Nullable="false" sap:label="Encrypted password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EncKey" Type="Edm.String" Nullable="false" sap:label="Public encryption key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="UD">
+                <Property Name="Selectedset" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Selected set" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CodeGroup" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Code group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CodeValuation" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Valuation Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FollowupAction" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Follow-up actn" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reason" Type="Edm.String" Nullable="false" sap:label="Reason for signature" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="68" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PwdEnc" Type="Edm.String" Nullable="false" sap:label="Encrypted password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pwd" Type="Edm.String" Nullable="false" MaxLength="132" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Teco" Type="ZOD_QM_INSPECTIONLOT_SRV.Teco" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="CLOSE">
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="68" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PwdEnc" Type="Edm.String" Nullable="false" sap:label="Encrypted password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pwd" Type="Edm.String" Nullable="false" MaxLength="132" sap:label="Password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAVE">
+                <Property Name="Cordinaytoe" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Created by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Remark" Type="Edm.String" Nullable="false" MaxLength="68" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Testequi" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Notifictn type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PwdEnc" Type="Edm.String" Nullable="false" sap:label="Encrypted password" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="OprToInsPointNav" sap:content-version="1">
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotOpr" Multiplicity="1" Role="FromRole_OprToInsPointNav"/>
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotpnt" Multiplicity="*" Role="ToRole_OprToInsPointNav"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_OprToInsPointNav">
+                        <PropertyRef Name="Inspoper"/>
+                        <PropertyRef Name="Insplot"/>
+                    </Principal>
+                    <Dependent Role="ToRole_OprToInsPointNav">
+                        <PropertyRef Name="Inspoper"/>
+                        <PropertyRef Name="Insplot"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="InsPointToResNav" sap:content-version="1">
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotpnt" Multiplicity="1" Role="FromRole_InsPointToResNav"/>
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotRr" Multiplicity="*" Role="ToRole_InsPointToResNav"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_InsPointToResNav">
+                        <PropertyRef Name="Insplot"/>
+                        <PropertyRef Name="Inspoper"/>
+                        <PropertyRef Name="Insppoint"/>
+                    </Principal>
+                    <Dependent Role="ToRole_InsPointToResNav">
+                        <PropertyRef Name="Insplot"/>
+                        <PropertyRef Name="Inspoper"/>
+                        <PropertyRef Name="Insppoint"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HdrToOprNav" sap:content-version="1">
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotRRHdr" Multiplicity="1" Role="FromRole_HdrToOprNav"/>
+                <End Type="ZOD_QM_INSPECTIONLOT_SRV.InspLotOpr" Multiplicity="*" Role="ToRole_HdrToOprNav"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HdrToOprNav">
+                        <PropertyRef Name="Insplot"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HdrToOprNav">
+                        <PropertyRef Name="Insplot"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZOD_QM_INSPECTIONLOT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="InspLotRRHdrSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspLotRRHdr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspLotOprSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspLotOpr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspLotpntSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspLotpnt" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspLotRrSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspLotRr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspLotATTSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspLotATT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UserDetailsSet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.UserDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspStockQtySet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspStockQty" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="INSPSAMPLESet" EntityType="ZOD_QM_INSPECTIONLOT_SRV.InspSample" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="InsPointToResNavSet" Association="ZOD_QM_INSPECTIONLOT_SRV.InsPointToResNav" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="InspLotpntSet" Role="FromRole_InsPointToResNav"/>
+                    <End EntitySet="InspLotRrSet" Role="ToRole_InsPointToResNav"/>
+                </AssociationSet>
+                <AssociationSet Name="OprToInsPointNavSet" Association="ZOD_QM_INSPECTIONLOT_SRV.OprToInsPointNav" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="InspLotOprSet" Role="FromRole_OprToInsPointNav"/>
+                    <End EntitySet="InspLotpntSet" Role="ToRole_OprToInsPointNav"/>
+                </AssociationSet>
+                <AssociationSet Name="HdrToOprNavSet" Association="ZOD_QM_INSPECTIONLOT_SRV.HdrToOprNav" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="InspLotRRHdrSet" Role="FromRole_HdrToOprNav"/>
+                    <End EntitySet="InspLotOprSet" Role="ToRole_HdrToOprNav"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://ifcnfioridev:8000/sap/opu/odata/sap/ZOD_QM_INSPECTIONLOT_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="http://ifcnfioridev:8000/sap/opu/odata/sap/ZOD_QM_INSPECTIONLOT_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

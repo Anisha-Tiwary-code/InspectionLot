@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+   <Dialog afterClose="onAfterDialogClose" contentWidth="40em" title="{i18n>lblCrtSample}">
+   	<content>
+   	<f:SimpleForm class="sapUiSizeCompact" editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+		<f:content>
+			<Label text="{i18n>lblInspectionLot}"/>
+			<Input value="{InspectionLotHDRModel>/InspectionLot}" enabled="{AppModeModel>/enabled}"  editable="false"/>
+			<Label text="{i18n>lblOperation}"/>
+			<Input valueHelpOnly="false" value="{InspectionLotHDRModel>/SelOperationNo}" editable="false"/>
+			<Label text="{i18n>lblSampCategory}"/>
+			<Input value="{LocalInspModel>/SampleCategory}" showValueHelp="true" valueHelpRequest="onVHSampleCategory"/>
+			<Label text="{i18n>lblSampCntr}"/>
+			<Input value="{LocalInspModel>/SampleCntr}" showValueHelp="true" valueHelpRequest="onVHSampleCntr" editable="false"/>							
+			<Label text="{i18n>lblSampleQuan}"/>
+			<Input value="{LocalInspModel>/SampleQuantity}"/>
+            <Label text="{i18n>lblSampleUoM}"/>
+            <Input value="{LocalInspModel>/UOM}" showValueHelp="true" valueHelpRequest="onVHUOM" />
+		</f:content>
+	</f:SimpleForm>
+	</content>
+	<buttons>
+		<Button text="{i18n>btnCreate}" type="Emphasized"  press="onDialogCreateInspLot"/>
+		<Button text="{i18n>btnClose}" visible="true" press="onDialogClose"/>
+	</buttons>
+   </Dialog>
+</core:FragmentDefinition>

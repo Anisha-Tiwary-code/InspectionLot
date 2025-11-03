@@ -1,0 +1,85 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:upload="sap.m.upload">
+		<!-- <upload:UploadSet id="idUploadSet" instantUpload="false" showIcons="true"
+				uploadEnabled="{AppModeModel>/enableBtnClose}"
+				terminationEnabled="true"
+				maxFileNameLength="0"
+				maxFileSize="0"
+				uploadUrl="/sap/opu/odata/sap/ZOD_QM_INSPECTIONLOT_SRV/InspLotATTSet"
+				beforeItemAdded="onUploadItem"
+				uploadCompleted="onUploadComplete"
+				beforeItemRemoved="onBeforeItemRemoved"
+				items="{path: 'AttachmentModel>/FileSet', templateShareable: false}">
+				<upload:toolbar>
+			</upload:toolbar>
+			<upload:items>
+				<upload:UploadSetItem
+						fileName="{AttachmentModel>fileName}"
+						mediaType="{AttachmentModel>Mimetype}"
+						url="{AttachmentModel>url}"
+						visibleEdit="false" 
+						visibleRemove="{AppModeModel>/enabled}"
+						removePressed="onFileDelete">
+				</upload:UploadSetItem>
+			</upload:items>
+		</upload:UploadSet> -->
+		<Table mode="None" items="{path: 'AttachmentModel>/FileSet', templateShareable: false}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="{i18n>titleDocuments}" level="H2"/>
+				<ToolbarSpacer/>
+				<Button
+					visible="{AppModeModel>/visibility}"
+					icon="sap-icon://add"
+					press="onOpenUploadDialog"/>
+				<Button
+					visible="{AppModeModel>/visibility}"
+					icon="sap-icon://camera"
+					press="onPressCamera"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column width="5%">
+				<Text text="{i18n>lblDoc}" />
+			</Column>
+			<Column width="10%">
+				<Text text="{i18n>lblType}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>lblDocument}" />
+			</Column>
+			<Column width="20%">
+				<Text text="{i18n>lblDescription}" />
+			</Column>
+			<Column width="10%">
+				<Text text="{i18n>lblApplication}" />
+			</Column>
+			<Column width="20%">
+				<Text text="{i18n>lblFileName}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>lblObject}" />
+			</Column>
+			<Column width="5%">
+				<Text text="{i18n>lblApp}" />
+			</Column>
+			<Column width="5%">
+				<Text text="" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Button icon="sap-icon://document-text" tooltip="{i18n>lblDocument}" press="onAttachmentDisplay"/>
+					<Text text="{AttachmentModel>Dokar}" />
+					<Text text="{AttachmentModel>Doknr}" />
+					<Text text="{AttachmentModel>File_desc}" tooltip="{AttachmentModel>File_desc}"/>
+					<Text text="{AttachmentModel>ShortDesc}" tooltip="{AttachmentModel>ShortDesc}"/>
+					<Link text="{AttachmentModel>File_name}" tooltip="{AttachmentModel>File_name}" press="onAttachmentDisplay" />
+					<Text text="{AttachmentModel>Ktxt}" />
+					<Text text="{AttachmentModel>Dappl}" />
+					<Button icon="sap-icon://delete" visible="{=${AttachmentModel>deleteItem} &amp;&amp; ${AppModeModel>/visibility}}" type="Reject" press="onDeleteAttachment" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

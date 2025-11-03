@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table items="{InspectionLotModel>/InspectionLotSet}" class="sapUiSizeCompact">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="{i18n>tableHeader}"/>
+				<ToolbarSpacer/>
+				<SearchField liveChange="onLiveSearchInspectionLot" search="onLiveSearchInspectionLot" width="50%"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Text text="{i18n>lblInspectionType}" />
+			</Column>
+			<Column >
+				<Text text="{i18n>lblInspectionLot}"/>
+			</Column>
+			<Column >
+				<Text text="{i18n>lblMaterial}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblInspectionObjectShortText}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblBatch}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="false">
+				<Text text="{i18n>lblInspectionStartDate}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>lblStatus}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>lblUserStatus}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onItemSelected">
+				<cells>
+					<Text text="{InspectionLotModel>InspectionType}"/>
+					<Text text="{InspectionLotModel>InspectionLot}"/>
+					<Text text="{InspectionLotModel>Matnr}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+					<Text text="{InspectionLotModel>InspectionObjectShortText}"/>
+					<Text text="{InspectionLotModel>Charg}" visible="{= ${filterModel>/inspectionlottypes} === 1 ? true : false}"/>
+					<Text text="{path:'InspectionLotModel>InspectionStartDate'}"/>
+					<ObjectStatus text="{InspectionLotModel>Status}"/>
+					<ObjectStatus text="{InspectionLotModel>UserStatus}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

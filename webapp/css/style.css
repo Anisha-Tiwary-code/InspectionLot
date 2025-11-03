@@ -1,0 +1,16 @@
+.clsSearchBar{
+	box-shadow: none!important;
+}
+.footerBtnWidth{
+	width: 140px;
+}
+.clsResultRecord{
+	min-height: 0%!important;
+}
+.alignContentCenter{
+	margin: auto;
+	width: 50%;
+}
+.styleOverFlow .sapMInputBaseInner{
+	text-overflow: clip!important;
+}

@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Dialog title="{i18n>titleCapturedImage}">
+        <content>
+            <VBox id="idCapturedImageVb" class="sapUiSmallMargin">
+            </VBox>
+        </content>
+        <buttons>
+            <Button text="{i18n>btnSave}" press="onSaveCapturedImage"/>
+            <Button text="{i18n>btnRetake}" press="onRecaptureImage"/>
+            <Button text="{i18n>btnCancel}" press="onCloseShowCapturedImage"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

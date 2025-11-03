@@ -1,0 +1,206 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Table
+        id="equipTableQM"
+        items="{path: 'EquipmentModel>/EquipmentSet', templateShareable: true}"
+        noDataText="{i18n>lblnoData}"
+        mode="SingleSelectLeft"
+        selectionChange="onCommonItemSelected"
+    >
+        <headerToolbar>
+            <OverflowToolbar>
+                <content>
+                    <ToolbarSpacer />
+                    <Button
+                        icon="sap-icon://add"
+                        press="onAddSample"
+                        visible="true"
+                    />
+                </content>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column visible="false">
+                <Text text="{i18n>lblInspectionPoint}" />
+            </Column>            
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="true"
+            >
+                <Text text="{i18n>lblPhySample}" />
+            </Column>
+            <Column visible="false">
+                <Text
+                    text="{i18n>lblEquipment} / {i18n>lblFunctionalLocation}"
+                />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="false"
+            >
+                <Text text="{i18n>lblDescription}" />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="false"
+            >
+                <Text text="{i18n>lblTestEquipment}" />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                width="6em"
+                visible="false"
+            />
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="false"
+            >
+                <Text text="{i18n>lblTestEquipmentDesc}" />
+            </Column>
+            <!-- Begin code CR 5000026736 by Veera Sudheer-->
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="true"
+            >
+                <Text text="{i18n>lblSampleCreateDate}" />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="true"
+            >
+                <Text text="{i18n>lblTime}" />
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                visible="true"
+            >
+                <Text text="{i18n>lblValuationStatus}" />
+            </Column>
+            <Column                
+                demandPopin="true"
+                visible="true"
+            >
+                <Text text="" />
+            </Column>
+            <!-- End code CR 5000026736 by Veera Sudheer-->
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                width="6em"
+                visible="true"
+            >
+                <Text text="{i18n>lblPrint}" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text
+                        text="{EquipmentModel>InspectionPoint}"
+                        visible="false"
+                    />                    
+                    <Text
+                        text="{EquipmentModel>PhysSmpl}"
+                        visible="true"
+                    />
+                    <Text
+                        text="{EquipmentModel>FLocTxt}"
+                        visible="false"
+                    />
+                    <Text
+                        text="{EquipmentModel>EquiDesc}"
+                        visible="false"
+                    />
+                    <Input
+                        valueHelpOnly="false"
+                        value="{EquipmentModel>TestEqui}"
+                        showValueHelp="true"
+                        valueHelpRequest="onVHTestEquipment"
+                        change="onChangeEquipmentDetail"
+                        enabled="{EquipmentModel>enbaleTestEquip}"
+                    />
+                    <Button
+                        icon="sap-icon://bar-code"
+                        text="{i18n>btnScan}"
+                        press="onBCSTestEquipment"
+                        enabled="{EquipmentModel>enbaleTestEquip}"
+                        visible="false"
+                    >
+                        <layoutData>
+                            <f:ColumnElementData
+                                cellsSmall="3"
+                                cellsLarge="2"
+                            />
+                        </layoutData>
+                    </Button>
+                    <Text
+                        text="{EquipmentModel>TestEquiDesc}"
+                        visible="false"
+                    />
+                    <!-- Begin code CR 5000026736 by Veera Sudheer-->
+                    <Text
+                        text="{ path: 'EquipmentModel>UDATE'}"
+                        visible="true"
+                    />
+                    <Text
+                        text="{ path: 'EquipmentModel>UTIME'}"
+                        visible="true"
+                    />
+                    <Text
+                        text="{EquipmentModel>VBEWERTUNG}"
+                        visible="true"
+                    />                    
+                    <HBox
+                        visible="{= !!${EquipmentModel>VBEWERTUNG} }"
+                        class="alignContentCenter"
+                    >
+                        <core:Icon
+                            src="sap-icon://accept"
+                            color="#037203"
+                            visible="{= ${EquipmentModel>VBEWERTUNG} === 'Accepted' }"
+                        >
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                        <core:Icon
+                            src="sap-icon://decline"
+                            color="#a50404"
+                            visible="{= ${EquipmentModel>VBEWERTUNG} !== 'Accepted' }"
+                        >
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                    </HBox>
+
+                    <!-- End code CR 5000026736 by Veera Sudheer-->
+                    <Button
+                        icon="sap-icon://print"
+                        press="onPrint"
+                        visible="true"
+                    >
+                        <layoutData>
+                            <f:ColumnElementData
+                                cellsSmall="3"
+                                cellsLarge="2"
+                            />
+                        </layoutData>
+                    </Button>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

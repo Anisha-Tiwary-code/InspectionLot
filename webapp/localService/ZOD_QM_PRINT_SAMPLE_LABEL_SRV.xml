@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOD_QM_PRINT_SAMPLE_LABEL_SRV" xml:lang="en" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="PhysicalSample" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Phynr"/>
+                    <PropertyRef Name="Plos2"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Charg"/>
+                </Key>
+                <Property Name="Pn_nr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Drawing Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phynr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Physical sample" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Prtyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Sample Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stat" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plos2" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Kname" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Printer Short name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="MatSHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Maktg" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="InspLotSHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Prueflos"/>
+                </Key>
+                <Property Name="Ktextlos" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="BatchSHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Charg"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SamNumSHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Phynr"/>
+                </Key>
+                <Property Name="Plos2" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Inspection Lot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PnNr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Drawing number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phynr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Physical sample" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prtyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Sample Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SampleLabelStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Phynr"/>
+                </Key>
+                <Property Name="Phynr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Physical sample" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RelStat" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Release Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrintStat" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Print Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Username" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PrintSample" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pn_nr"/>
+                </Key>
+                <Property Name="Pn_nr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Drawing Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="NP_PRINT" Relationship="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PrintToSample" FromRole="FromRole_PrintToSample" ToRole="ToRole_PrintToSample"/>
+            </EntityType>
+            <Association Name="PrintToSample" sap:content-version="1">
+                <End Type="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PrintSample" Multiplicity="0..1" Role="FromRole_PrintToSample"/>
+                <End Type="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PhysicalSample" Multiplicity="*" Role="ToRole_PrintToSample"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PrintToSample">
+                        <PropertyRef Name="Pn_nr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PrintToSample">
+                        <PropertyRef Name="Pn_nr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZOD_QM_PRINT_SAMPLE_LABEL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PhysicalSample" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PhysicalSample" sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="MatSHSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.MatSHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="InspLotSHelpSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.InspLotSHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="BatchSHelpSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.BatchSHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SamNumSHelpSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.SamNumSHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SampleLabelStatusSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.SampleLabelStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PrintSampleSet" EntityType="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PrintSample" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="PrintToSampleSet" Association="ZOD_QM_PRINT_SAMPLE_LABEL_SRV.PrintToSample" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PrintSampleSet" Role="FromRole_PrintToSample"/>
+                    <End EntitySet="PhysicalSample" Role="ToRole_PrintToSample"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://ifcnfioridev:8000/sap/opu/odata/sap/ZOD_QM_PRINT_SAMPLE_LABEL_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="http://ifcnfioridev:8000/sap/opu/odata/sap/ZOD_QM_PRINT_SAMPLE_LABEL_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

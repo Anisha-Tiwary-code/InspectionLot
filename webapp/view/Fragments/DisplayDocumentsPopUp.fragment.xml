@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Dialog class="sapUiResponsiveContentPadding" title="{DocumentDisplayModel>/DocumentPopUpHeader}">
+        <content>
+        <Table mode="None" items="{path: 'DocumentDisplayModel>/Documents', templateShareable: false}">
+		    <columns>
+			    <Column width="5%">
+				    <Text text="{i18n>lblDoc}" />
+		    	</Column>
+				<Column width="20%">
+	    			<Text text="{i18n>lblDescription}" />
+	    		</Column>
+	    		<Column width="15%">
+	    			<Text text="{i18n>lblApplication}" />
+	    		</Column>
+	    		<Column width="25%">
+	    			<Text text="{i18n>lblFileName}" />
+	    		</Column>
+				<Column width="5%">
+	    			<Text text="{i18n>lblApp}" />
+	    		</Column>
+	    	</columns>
+	    	<items>
+	    		<ColumnListItem>
+	    			<cells>
+	    				<Button icon="sap-icon://document-text" tooltip="{i18n>lblDocument}" press="onPressDisplayDocument"/>
+	    				<Text text="{DocumentDisplayModel>FileDesc}" />
+                        <Text text="{DocumentDisplayModel>Short_desc}" />
+	    				<Text text="{DocumentDisplayModel>FileName}" />
+	    				<Text text="{DocumentDisplayModel>Dappl}" />
+	    			</cells>
+	    		</ColumnListItem>
+	    	</items>
+	    </Table>
+        </content>
+        <buttons>
+            <Button text="{i18n>btnClose}" press="onCloseDocumentDisplayPopUp"></Button>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

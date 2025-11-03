@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table items="{path: 'OperationModel>/OperationSet', templateShareable: true}" noDataText="{i18n>lblnoData}" mode="SingleSelectLeft" selectionChange="onCommonItemSelected">
+		<columns>
+			<Column>
+				<Text text="{i18n>lblOperationNum}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblDescription}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="false">
+				<Text text="{i18n>lblWorkCenter}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{OperationModel>OperationNo}"/>
+					<Text text="{OperationModel>Description}" />
+					<Text text="{OperationModel>WorkCenter}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

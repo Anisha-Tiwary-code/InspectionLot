@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+   <Dialog afterClose="onAfterDialogClose" contentWidth="40em" title="{i18n>lblResonforChange}">
+   	<content>
+   	<Table items="{path: 'RecordResultCompareModel>/RecordResultCompareSet', templateShareable: true,filters:[{path:'Flag',operator:'EQ',value1:'X'}]}" noDataText="{i18n>lblnoData}">
+		<columns>
+			<Column>
+				<Text text="{i18n>lblCharNo}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblCharShortTxt}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblinspUnitnumber}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>lblOldResult}" />
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="6em">
+				<Text text="{i18n>lblResult}" />
+			</Column>
+			<Column  minScreenWidth="Tablet" demandPopin="true" width="8em">
+				<Text text="{i18n>lblReasonforchange}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{RecordResultCompareModel>Inspchar}"/>
+					<Text text="{RecordResultCompareModel>Kurztext}"/>
+					<Text text="{RecordResultCompareModel>ResultData}"/>
+					<Text text="{RecordResultCompareModel>OSumplus}" />
+					<Text text="{RecordResultCompareModel>Sumplus}"/>
+					<Input value="{RecordResultCompareModel>Short_Text}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</content>
+	<buttons>
+		<Button text="{i18n>btnCreate}" type="Emphasized"  press="onDialogSaveResult"/>
+		<Button text="{i18n>btnClose}" visible="true" press="onDialogClose"/>
+	</buttons>
+   </Dialog>
+</core:FragmentDefinition>

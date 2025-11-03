@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.reckitt.zqminsplotrr
+type: application
+builder:
+  resources:
+    excludes:
+      - index.html
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: GDF
+          url: http://tazfridevpas.idc.rb.net:8000
+        app:
+          name: ZQM_INSPLOTRR
+          description: result recording for all PM & QM inspection lots
+          package: zqm_fiori
+          transport: GDFK900423 #GDFK900414 #GDFK900412 #GDFK900409 #GDFK900398 #GDFK900395 #GDFK900384 #GDFK900333 #GDFK900325 #GDFK900317 #GDFK900302 #GDFK900293 #GDFK900216   #GDFK900193  
+        exclude:
+          - /test/
+          - /localService/
+          - index.html
