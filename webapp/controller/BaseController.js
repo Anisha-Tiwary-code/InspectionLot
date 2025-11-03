@@ -1209,6 +1209,10 @@ sap.ui.define([
 					aFilter.push(new Filter("Aufnr", FilterOperator.EQ, oFilterModel.getProperty("/ProductionOrder")));
 				}
 				//End Code CR 5000026736 Veera Sudheer
+				// Send Work Center as Arbpl in payload when provided
+				if (oFilterModel.getProperty("/WorkCenter").length > 0) {
+					aFilter.push(new Filter("Arbpl", FilterOperator.EQ, oFilterModel.getProperty("/WorkCenter")));
+				}
 				if (oFilterModel.getProperty("/selectedLTIN") === true) {
 					status.push(oResourceBun.getText("lblLTIN"));
 				}
