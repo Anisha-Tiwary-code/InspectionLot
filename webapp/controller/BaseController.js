@@ -1211,7 +1211,9 @@ sap.ui.define([
 				//End Code CR 5000026736 Veera Sudheer
 				// Send Work Center as Arbpl in payload when provided
 				if (oFilterModel.getProperty("/WorkCenter").length > 0) {
-					aFilter.push(new Filter("Arbpl", FilterOperator.EQ, oFilterModel.getProperty("/WorkCenter")));
+					var sWC = oFilterModel.getProperty("/WorkCenter");
+					if (sWC) { sWC = sWC.toUpperCase(); }
+					aFilter.push(new Filter("Arbpl", FilterOperator.EQ, sWC));
 				}
 				if (oFilterModel.getProperty("/selectedLTIN") === true) {
 					status.push(oResourceBun.getText("lblLTIN"));
