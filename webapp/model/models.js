@@ -55,7 +55,9 @@ sap.ui.define([
 				"selectedRREC": false,
 				"selectedLTIN": false,
 				"Plant": "",
-					"WorkCenter": "",
+				//Begin Code - Add WorkCenter property to filter model
+				"WorkCenter": "",
+				//End Code - Add WorkCenter property to filter model
 				"material": "",
 				"batch": "",
 				"selectedSevan": true,
